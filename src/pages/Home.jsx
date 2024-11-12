@@ -1,10 +1,8 @@
-import React, { useState } from 'react'
 import Hero from '../components/Hero'
 import Card from '../components/Card'
 import Testimonial from '../components/Testimonial'
 import GiftPostCard from '../components/GiftPostCard'
 import Services from '../components/Services'
-import SideBarCart from '../components/SideBarCart'
 
 const Home = () => {
 

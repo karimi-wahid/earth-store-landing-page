@@ -4,11 +4,11 @@ import {navItems} from '../constants/index'
 
 const Footer = () => {
   return (
-    <footer className='grid grid-cols-1 md:grid-cols-3 place-items-center gap-5 px-5 border-t border-neutral-600 my-10 pt-10'>
+    <footer className='grid grid-cols-1 lg:grid-cols-3 place-items-center gap-5 px-5 mt-10 mb-5'>
         <div>
             <ul className='flex items-center gap-5'>
                 {navItems.map((item, index) => (
-                <li key={index} className='hover:text-green-600 uppercase'>
+                <li key={index} className='hover:text-primary uppercase'>
                     <Link to={item.link}>{item.label}</Link>
                 </li>
                 ))}

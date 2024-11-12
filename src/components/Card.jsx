@@ -1,4 +1,4 @@
-import {cardPosters} from '../constants/index'
+import { cardPosters } from "../constants"
 
 const Card = () => {
   return (
@@ -8,9 +8,9 @@ const Card = () => {
         <img src={poster.imgUrl}
         className='md:h-[400px] w-[90%]' />
             <div>
-                <p className='font-[12px] text-neutral-500 mt-2 lg:mt-0'>{poster.type}</p>
+                <p className='font-[12px] text-secondary mt-2 lg:mt-0'>{poster.type}</p>
                 <h1 className='font-semibold'>{poster.title}</h1>
-                <p className='text-neutral-600'>${poster.price}</p>
+                <p className='text-secondary'>${poster.price}</p>
             </div>
         </div>
         ))}

@@ -87,3 +87,33 @@ export const contactUs = [
         icon: <CiLocationOn />
     },
 ]
+
+
+export const SPDForP = [
+    {label : 'Printed on High-Quality vinyl.'},
+    {label : '1-inch thick wooden back frame.'},
+    {label : 'No additional hanging hardware is required.'},
+    {label : 'Care: Dust with a soft, dry cloth.'},
+]
+
+export const SPDForPP = [
+    {label : 'Printed on High-Quality matte photo paper.'},
+    {label : 'Acrylic borders are used.'},
+    {label : 'Highly durable acrylic glass is used on the top to protect it from damage.'},
+    {label : 'Hooks are attached to the back of each frame for hanging.'},
+]
+
+export const SPDForPC = [
+    {label : '17.5 pt thickness / 120 lb weight / 324 GSM'},
+    {label : 'Light white, uncoated matte finish with an eggshell texture'},
+    {label : 'Paper is easy to write on and won’t smudge'},
+    {label : 'Made and printed in the USA'},
+]
+
+export const SPDForPCP = [
+    {label : '12.5 pt thickness / 110 lb weight'},
+    {label : 'Bright white, semi-gloss finish'},
+    {label : '50% recycled content'},
+    {label : 'FSC certified'},
+    {label : 'Paper imported from Italy; printed in the USA'},
+]

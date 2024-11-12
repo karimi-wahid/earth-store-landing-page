@@ -4,9 +4,45 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {  
+  --primary-color: #199473; /* green color */  
+  --secondary-color: #334E68; /* Blue Grey color */    
+  --triple-color: #F0F4F8; /* Blue Grey color */    
+} 
+
+@layer components {  
+  .btn {  
+      @apply bg-[var(--primary-color)] text-white py-2 px-4 rounded-md hover:bg-[#14919b] duration-200;  
+  }
+  .input {
+    @apply py-2  px-3 outline-none border border-neutral-300;
+  }
+
+}  
+
 *{
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
+}
+
+*::selection{
+  background-color: #147D64;
+  color: white;
+}
+
+::-webkit-scrollbar{
+  width: 12px;
+}
+
+::-webkit-scrollbar-track{
+  background-color: #014D40;
+  
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: #147D64;
+  border-radius: 20px;
+  height: 5px;
 }

@@ -5,16 +5,24 @@ import { FaBasketShopping } from "react-icons/fa6";
 import { BiMenu } from "react-icons/bi";
 import { IoMdClose } from "react-icons/io";
 import { AppContext } from "../hooks/AppContext";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const { sideToggle, setSideToggle } = useContext(AppContext);
   const [navOpen, setNavOpen] = useState(false);
+  const totalItemAdded = useSelector((state) => state.name.cartItem).length;
+
 
   const toggleNavbar = () => {
     setNavOpen(!navOpen);
   };
+
+  const handleNavItemClick = () => {
+    setNavOpen(false);
+  };
+
   return (
-    <nav className="sticky top-0 z-30 py-3 backdrop-blur-lg">
+    <nav className="sticky top-0 py-3 backdrop-blur-lg z-40">
       <div className="container px-4 mx-auto relative text-sm">
         <div className="flex items-center justify-between">
           <div className="flex items-center flex-shrink-0">
@@ -30,8 +38,8 @@ const Navbar = () => {
                 <li key={index} className="text-black text-[16px]">
                   <NavLink
                     className={({ isActive }) =>
-                      `hover:text-[#7e8427] ${
-                        isActive ? "text-green-600" : "text-gray-700"
+                      `hover:text-secondary ${
+                        isActive ? "text-black" : "text-primary"
                       }`
                     }
                     to={item.href}>
@@ -44,14 +52,14 @@ const Navbar = () => {
           <div className="hidden lg:flex justify-center items-center space-x-12">
             <Link
               to="#"
-              className="py-2 px-3 border border-neutral-300 rounded-md relative">
+              className="py-2 px-3 border border-triple rounded-md relative">
               <FaBasketShopping
                 size={20}
                 onClick={() => setSideToggle(!sideToggle)}
               />
             </Link>
-            <p className="w-5 h-5 flex justify-center items-center p-3 bg-green-700 text-white rounded-full absolute top-0 right-0">
-              1
+            <p className="w-5 h-5 flex justify-center items-center p-3 bg-primary text-white rounded-full absolute top-0 right-0">
+              {totalItemAdded}
             </p>
           </div>
           <div className="lg:hidden md:flex flex-col justify-end">
@@ -61,12 +69,12 @@ const Navbar = () => {
           </div>
         </div>
         {navOpen && (
-          <div className="fixed right-0 z-20 w-full p-12 flex flex-col justify-center items-center lg:hidden bg-white">
+          <div className="fixed right-0 w-full p-12 flex flex-col justify-center items-center lg:hidden bg-white">
             <ul>
               {navItems.map((item, index) => {
                 return (
                   <li key={index} className="py-4">
-                    <Link to={item.href}>{item.label}</Link>
+                    <Link to={item.href} onClick={handleNavItemClick}>{item.label}</Link>
                   </li>
                 );
               })}
@@ -74,7 +82,8 @@ const Navbar = () => {
             <div className="flex space-x-6">
               <Link
                 to="#"
-                className="py-2 px-3 border border-neutral-400 rounded-md">
+                className="py-2 px-3 border border-triple rounded-md"
+                onClick={handleNavItemClick}>
                 <FaBasketShopping
                   size={30}
                   onClick={() => setSideToggle(!sideToggle)}
